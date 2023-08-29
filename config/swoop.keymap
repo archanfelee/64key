@@ -101,6 +101,17 @@
                    &kp C_VOL_DN  &kp LALT  &kp LCTRL  &mt LGUI DEL  &kp LEFT  &kp RIGHT   &kp DOWN  &kp C_VOL_UP
             >;
         };
+        dvorak_layer {
+            label = "DVRK";
+            bindings = <
+&trans   &trans     &trans     &trans      &trans  &trans     &trans  &trans &trans &trans  &trans    &trans
+&trans   &kp SQT    &kp COMMA  &kp PERIOD  &kp P   &kp Y      &kp F   &kp G  &kp C  &kp R   &kp L     &trans
+&trans   &kp A      &kp O      &kp E       &kp U   &kp I      &kp D   &kp H  &kp T  &kp N   &kp S     &trans
+&trans   &kp SEMI   &kp Q      &kp J       &kp K   &kp X      &kp B   &kp M  &kp W  &kp W   &kp Z     &trans
+                       &trans   &trans   &trans  &trans   &none      &none     &none       &kp none
+                       &trans   &trans   &trans  &trans  &trans      &none         &none           &trans
+            >;
+        };
         number_layer {
             label = "NUMBER";
             bindings = <
