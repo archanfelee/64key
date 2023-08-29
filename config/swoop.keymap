@@ -5,9 +5,11 @@
 
 #define DEFAULT 0
 #define DVRK    1
-#define NUMBER  2
-#define SYMBOL  3
-#define HOTKEY  4
+#define QWERTY  2
+#define NUMBER  3
+#define SYMBOL  4
+#define READ    5
+#define BLTH    6
 
 #define AS(keycode) &as LS(keycode) keycode
 
@@ -95,18 +97,45 @@
 &lt 2 TAB   &kp Q         &kp W     &kp E      &kp R         &kp T     &kp Y      &kp U      &kp I         &kp O     &kp P  &lt 2 EQUAL
 &kp LWIN   &kp A         &kp B     &kp V      &kp F         &kp G     &kp H      &kp N      &kp M         &kp L  &kp C      &kp SQT
  &kp LSHFT   &kp Z         &kp X     &kp K      &kp D         &kp S     &kp K      &kp J  &kp COMMA       &kp DOT  &kp S    &kp LSHFT
-                      &kp GRAVE  &kp BSLH     &kp SPACE   &kp ESC    &kp BSPC  &kp ENTER   &kp LBKT      &kp RBKT
-                   &kp C_VOL_DN  &kp LALT  &kp LCTRL  &mt LGUI DEL  &kp LEFT  &kp RIGHT   &kp DOWN  &kp C_VOL_UP
+                      &kp GRAVE  &kp BSLH     &mt NUMBER SPACE   &kp ESC    &mt QWERTY BSPC  &kp ENTER   &kp LBKT      &kp RBKT
+                   &kp C_VOL_DN  &kp LALT  &kp LCTRL  &mt dLGUI DEL  &kp LEFT  &kp RIGHT   &kp DOWN  &kp C_VOL_UP
             >;
         };
+
+        dvorak_layer {
+            label = "DVRK";
+            bindings = <
+&trans   &trans     &trans     &trans      &trans  &trans     &trans  &trans &trans &trans  &trans    &trans
+&trans   &ky SQT    &kp COMMA  &kp PERIOD  &kp P   &kp Y      &kp F   &kp G  &kp C  &kp R   &kp L     &trans
+&trans   &kp A      &kp O      &kp E       &kp U   &kp I      &kp D   &kp H  &kp T  &kp N   &kp S     &trans
+&trans   &kp SEMI   &kp Q      &kp J       &kp K   &kp X      &kp B   &kp M  &kp W  &kp W   &kp Z     &trans
+                       &trans   &trans   &trans  &trans   &none      &none     &none       &kp none
+                       &trans   &trans   &trans  &trans  &trans      &none         &none           &trans
+            >;
+        };
+
+        qwerty_layer {
+            label = "QWERTY";
+            bindings = <
+&trans   &trans  &trans   &trans   &trans  &trans     &trans  &trans &trans &trans  &trans    &trans
+&trans   &ky Q   &kp W    &kp E    &kp R   &kp T      &kp Y   &kp U  &kp I  &kp O   &kp P     &trans
+&trans   &kp A   &kp S    &kp D    &kp F   &kp G      &kp H   &kp J  &kp K  &kp L   &kp SEMI  &trans
+&trans   &kp Z   &kp X    &kp C    &kp V   &kp B      &kp N   &kp M  &kp COMMA  &kp DOT   &kp SLASH     &trans
+                       &trans   &trans   &trans  &trans   &none      &none     &none       &kp none
+                       &trans   &trans   &trans  &trans  &trans      &none         &none           &trans
+            >;
+        };
+
+
+
 
         number_layer {
             label = "NUMBER";
             bindings = <
-&trans         &none  &kp F10  &kp F11  &kp F12   &none   &none      &none  &kp KP_SLASH  &kp KP_MULTIPLY  &kp KP_MINUS      &none
-&trans  &macro_phone   &kp F7   &kp F8   &kp F9   &none   &none  &kp KP_N7     &kp KP_N8        &kp KP_N9   &kp KP_PLUS      &none
-&trans         &none   &kp F4   &kp F5   &kp F6   &none   &none  &kp KP_N4     &kp KP_N5        &kp KP_N6     &kp ENTER      &none
-&trans         &none   &kp F1   &kp F2   &kp F3   &none   &none  &kp KP_N1     &kp KP_N2        &kp KP_N3     &kp ENTER  &kp ENTER
+&trans     &none     &kp F10  &kp F11  &kp F12   &none   &none      &none  &kp KP_SLASH  &kp KP_MULTIPLY  &kp KP_MINUS      &trans
+&trans     &kp UP    &kp LEFT   &kp DOWN   &kp RIGHT   &none     &none    &kp KP_N7     &kp LBKT   &kp RBKT   &kp BSLH      &trans
+&trans     &kp N1    &kp N2     &kp N3     &kp N4      &kp N5    &kp N6   &kp N7        &kp N8     &kp N9     &kp N0        &trans
+&trans     &kp EXCL  &kp QMARK  &kp LT     &kp GT      &none     &kp SEMI &kp COLON     &kp LBRC   &kp RBRC   &kp SLASH     &trans
                        &trans   &trans   &trans  &trans   &none      &none     &kp KP_N0       &kp KP_DOT
                        &trans   &trans   &trans  &trans  &trans      &none         &none           &trans
             >;
