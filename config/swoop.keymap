@@ -10,6 +10,7 @@
 #define SYMBOL  4
 #define READ    5
 #define BLTH    6
+#define HOTKEY  7
 
 #define AS(keycode) &as LS(keycode) keycode
 
@@ -97,7 +98,7 @@
 &lt 2 TAB   &kp Q         &kp W     &kp E      &kp R         &kp T     &kp Y      &kp U      &kp I         &kp O     &kp P  &lt 2 EQUAL
 &kp LWIN   &kp A         &kp B     &kp V      &kp F         &kp G     &kp H      &kp N      &kp M         &kp L  &kp C      &kp SQT
  &kp LSHFT   &kp Z         &kp X     &kp K      &kp D         &kp S     &kp K      &kp J  &kp COMMA       &kp DOT  &kp S    &kp LSHFT
-                      &kp GRAVE  &kp BSLH     &mt NUMBER SPACE   &kp ESC    &mt QWERTY BSPC  &kp ENTER   &kp LBKT      &kp RBKT
+                      &kp GRAVE  &kp BSLH     &lt NUMBER SPACE   &kp ESC    &lt QWERTY BSPC  &kp ENTER   &kp LBKT      &kp RBKT
                    &kp C_VOL_DN  &kp LALT  &kp LCTRL  &mt dLGUI DEL  &kp LEFT  &kp RIGHT   &kp DOWN  &kp C_VOL_UP
             >;
         };
@@ -141,8 +142,8 @@
             >;
         };
 
-        symbol_layer {
-            label = "SYMBOL";
+        bluetooth_layer {
+            label = "BLTH";
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
   &sys_reset         &none         &none         &none         &none  &out OUT_USB  &out OUT_USB         &none         &none         &none         &none  &sys_reset
